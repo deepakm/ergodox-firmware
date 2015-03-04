@@ -42,6 +42,16 @@
 void P(fatarrow)(void) { KF(type_string)( PSTR("->") ); }
 void R(fatarrow)(void) {}
 
+void keys__press__sSpace (void) {
+    usb__kb__set_key(true, KEYBOARD__LeftShift);
+    usb__kb__set_key(true, KEYBOARD__Spacebar);
+    usb__kb__send_report();
+    usb__kb__set_key(false, KEYBOARD__LeftShift);
+    usb__kb__set_key(false, KEYBOARD__Spacebar);
+}
+
+void R(sSpace)(void) {}
+
 // ----------------------------------------------------------------------------
 // layout
 // ----------------------------------------------------------------------------
@@ -93,7 +103,7 @@ static layout_t layout PROGMEM = {
                                    nop,      nop,   period,    enter,    quote,
      nop,      nop,
      nop,      nop,      nop,
-     nop,      nop,        0  ),
+     nop,      nop,      sSpace ),
 
 // ............................................................................
 
