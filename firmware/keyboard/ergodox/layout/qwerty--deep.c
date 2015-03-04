@@ -38,6 +38,9 @@
 
 #include "./fragments/matrix-control.part.h"
 
+//Macros
+void P(fatarrow)(void) { KF(type_string)( PSTR("->") ); }
+void R(fatarrow)(void) {}
 
 // ----------------------------------------------------------------------------
 // layout
@@ -85,9 +88,9 @@ static layout_t layout PROGMEM = {
 // right hand ..... ......... ......... ......... ......... ......... .........
                F12,       F6,       F7,       F8,       F9,      F10,    btldr,
                nop,     pipe,    brktL,    brktR,     dash,  undersc,      nop,
-                      arrowL,   arrowD,   arrowU,   arrowR,     plus,    quote,
-               nop,      nop,   braceL,   braceR,        3,    enter,   shiftR,
-                                   nop,      nop,   period,    enter,      nop,
+                      arrowL,   arrowD,   arrowU,   arrowR,     plus, dblQuote,
+               nop,      nop,   braceL,   braceR, fatarrow,    enter,   shiftR,
+                                   nop,      nop,   period,    enter,    quote,
      nop,      nop,
      nop,      nop,      nop,
      nop,      nop,        0  ),
