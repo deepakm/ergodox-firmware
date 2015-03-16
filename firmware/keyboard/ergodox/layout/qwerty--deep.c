@@ -50,7 +50,43 @@ void keys__press__sSpace (void) {
     usb__kb__set_key(false, KEYBOARD__Spacebar);
 }
 
+void keys__press__sArrowL (void) {
+    usb__kb__set_key(true, KEYBOARD__LeftShift);
+    usb__kb__set_key(true, KEYBOARD__LeftArrow);
+    usb__kb__send_report();
+    usb__kb__set_key(false, KEYBOARD__LeftShift);
+    usb__kb__set_key(false, KEYBOARD__LeftArrow);
+}
+
+void keys__press__sArrowR (void) {
+    usb__kb__set_key(true, KEYBOARD__LeftShift);
+    usb__kb__set_key(true, KEYBOARD__RightArrow);
+    usb__kb__send_report();
+    usb__kb__set_key(false, KEYBOARD__LeftShift);
+    usb__kb__set_key(false, KEYBOARD__RightArrow);
+}
+
+void keys__press__sArrowU (void) {
+    usb__kb__set_key(true, KEYBOARD__LeftShift);
+    usb__kb__set_key(true, KEYBOARD__UpArrow);
+    usb__kb__send_report();
+    usb__kb__set_key(false, KEYBOARD__LeftShift);
+    usb__kb__set_key(false, KEYBOARD__UpArrow);
+}
+
+void keys__press__sArrowD (void) {
+    usb__kb__set_key(true, KEYBOARD__LeftShift);
+    usb__kb__set_key(true, KEYBOARD__DownArrow);
+    usb__kb__send_report();
+    usb__kb__set_key(false, KEYBOARD__LeftShift);
+    usb__kb__set_key(false, KEYBOARD__DownArrow);
+}
+
 void R(sSpace)(void) {}
+void R(sArrowL)(void) {}
+void R(sArrowR)(void) {}
+void R(sArrowU)(void) {}
+void R(sArrowD)(void) {}
 
 // ----------------------------------------------------------------------------
 // layout
@@ -67,7 +103,7 @@ static layout_t layout PROGMEM = {
      tab,        q,        w,        e,        r,        t,   tilde,
     guiL,        a,        s,        d,        f,        g,
   shiftL,        z,        x,        c,        v,        b,     esc,
-    ctrlL,    grave, bkslash,     altL, lpupo1l1,
+    ctrlL,    grave, bkslash, lpupo2l2, lpupo1l1,
                                                                  del,     altL,
                                                        nop,      nop,     home,
                                                         bs,    ctrlL,      end,
@@ -87,7 +123,7 @@ static layout_t layout PROGMEM = {
 // macro, unused,
        K,    nop,
 // left hand ...... ......... ......... ......... ......... ......... .........
-     nop,       F1,       F2,       F3,       F4,       F5,      F11,
+   btldr,       F1,       F2,       F3,       F4,       F5,      F11,
      nop,      nop,      nop,      nop,      nop,      nop,      nop,
      nop,      nop,      nop,   parenL,   parenR,      nop,
   shiftL,      nop,      nop,      nop,      nop,      nop,      nop,
@@ -96,7 +132,7 @@ static layout_t layout PROGMEM = {
                                                        nop,      nop,      nop,
                                                      space,      nop,      nop,
 // right hand ..... ......... ......... ......... ......... ......... .........
-               F12,       F6,       F7,       F8,       F9,      F10,    btldr,
+               F12,       F6,       F7,       F8,       F9,      F10,       bs,
                nop,     pipe,    brktL,    brktR,  undersc,     dash,      nop,
                       arrowL,   arrowD,   arrowU,   arrowR,    equal, dblQuote,
                nop,      nop,   braceL,   braceR, fatarrow,     plus,   shiftR,
@@ -122,7 +158,7 @@ static layout_t layout PROGMEM = {
 // right hand ..... ......... ......... ......... ......... ......... .........
                F12,       F6,       F7,       F8,       F9,      F10,    power,
             lpo2l2,    caret,  undersc, lessThan, grtrThan,   dollar,  volumeU,
-                     bkslash,        1,   parenL,   parenR,    equal,  volumeD,
+                     sArrowL,  sArrowD,  sArrowU,  sArrowR,    equal,  volumeD,
           lpupo3l3, asterisk,        2,        3,        4,        5,     mute,
                                 transp,   transp,   transp,   transp,   transp,
   transp,   transp,
