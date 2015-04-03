@@ -106,7 +106,7 @@ static layout_t layout PROGMEM = {
     ctrlL,    grave, bkslash, lpupo2l2, lpupo1l1,
                                                                  del,     altL,
                                                        nop,      nop,     home,
-                                                        bs,    ctrlL,      end,
+                                                    shiftL,    ctrlL,      end,
 // right hand ..... ......... ......... ......... ......... ......... .........
                  7,        8,        9,        0,     dash,    equal,       bs,
               pipe,        y,        u,        i,        o,        p,    brktR,
@@ -157,9 +157,9 @@ static layout_t layout PROGMEM = {
                                                     transp,   transp,   transp,
 // right hand ..... ......... ......... ......... ......... ......... .........
                F12,       F6,       F7,       F8,       F9,      F10,    power,
-            lpo2l2,    caret,  undersc, lessThan, grtrThan,   dollar,  volumeU,
+            lpo2l2,    caret,  lessThan,grtrThan,  undersc,   dollar,  volumeU,
                      sArrowL,  sArrowD,  sArrowU,  sArrowR,    equal,  volumeD,
-          lpupo3l3, asterisk,        2,        3,        4,        5,     mute,
+         lpupo3l3, asterisk,    pound,  asterisk,        4,        5,     mute,
                                 transp,   transp,   transp,   transp,   transp,
   transp,   transp,
   transp,   transp,   transp,
